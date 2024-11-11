@@ -16,7 +16,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="text-center  bg-black text-white">
+    <div className="text-center  bg-black text-white min-h-[100vh] overflow-auto">
       <h1 className="text-[2em] mb-4 uppercase ">Coinlayer Assignment</h1>
       <p className="text-[1.4em] mb-4">Welcome to the Coinlayer API</p>
 
@@ -24,15 +24,15 @@ export default function Home() {
         <thead className="border">
           <tr className="text-[1.4em]">
             <th className="border p-3 ">Currency</th>
-            <th className="border p-3 ">Price</th>
+            <th className="border p-3 ">Rate</th>
           </tr>
         </thead>
         <tbody>
           {data &&
-            Object.entries(data).map(([currency, price], index) => (
+            Object.entries(data).map(([currency, rate], index) => (
               <tr key={index} className="border p-3 ">
                 <td className="border p-3 ">{currency}</td>
-                <td className="border p-3 ">{price}</td>
+                <td className="border p-3 ">{rate} USD</td>
               </tr>
             ))}
         </tbody>
